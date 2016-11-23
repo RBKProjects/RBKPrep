@@ -1,4 +1,10 @@
 var express = require('express');
+var mongoose = require('mongoose');
+
+// connect to mongo database named "lets-hangout"
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/rbk-prep';
+mongoose.connect(mongoURI);
+db = mongoose.connection;
 
 var app = express();
 
@@ -12,7 +18,6 @@ app.use(function (req, res, next) {
 // configure our server with all the middleware and routing
 require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);
-require('./config/database.js')();
 
 var port = process.env.PORT || 8000;
 

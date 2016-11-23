@@ -1,20 +1,13 @@
-angular.module('namaa-news', [
-  'namaa-news.news',
-  'ngMaterial',
-  'namaa-news.users',
-  'namaa-news.services',
+angular.module('rbk-prep', [
+  
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/news', {
-      templateUrl: 'app/news/news.html',
-      controller: 'NewsController'
-    })
-    .when('/users', {
-      templateUrl: 'app/users/users.html',
-      controller: 'UsersController'
+  //test
+    .when('/', {
+      templateUrl: 'app/lessons/lessons.html'
     })
 
-    .otherwise('/users')
+    .otherwise('/')
 })
